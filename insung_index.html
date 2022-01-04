@@ -1,0 +1,81 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Welcome to Insung</title>
+</head>
+    
+<style>
+    div {
+      background-color: black;
+    }
+    h1, h2, h3, h5 {
+        color: white;
+    }
+</style>
+    
+<body>
+<div align="center">
+<br><br>
+<h1>WELCOME TO INSUNG</h1>
+   
+   <br>
+   <h5>C R E A T E D   B Y<br>Y O U G O D / S U N X I / E A R T H O O</h5>
+   <br><hr><br>
+   <h3>아래 문장을 말해주세요.</h3><br>
+   <div>
+   <h5>"아두이노를 활용한 보이스컨설팅"</h5>
+    <button type="button" style="color:white; border-radius: 5px; background-color: darkslateblue; border: 5px; padding: 5px; margin-right: 5px;" onClick="record('/record1')" id="record1" >RECORD 1</button>
+
+    <button type="button" style="border-radius: 5px; border: 5px; background-color: white; padding: 5px; margin-left: 5px;" onClick="play('/sound1.wav')" id="play1">PLAY 1</button>
+
+    <button type="button" style="border-radius: 5px; border: 5px; background-color: darkorange; padding: 5px; margin-left: 5px;" onClick="location.href='http://insung.dothome.co.kr/insung.html'">결과보기</button>
+    </div>
+<br><br>
+   <div>
+   <h5>"WELCOME TO INSUNG"</h5>
+    <button type="button" style="color:white; border-radius: 5px; background-color: darkslateblue; border: 5px; padding: 5px; margin-right: 5px;" onClick="record('/record2')" id="record2">RECORD 2</button>
+     <button type="button" style="border-radius: 5px; border: 5px; background-color: white; padding: 5px; margin-left: 5px;" onClick="play('/sound2.wav')" id="play2">PLAY 2</button>
+    <button type="button" style="border-radius: 5px; border: 5px; background-color: darkorange; padding: 5px; margin-left: 5px;" onClick="location.href='http://insung.dothome.co.kr/insung.html'">결과보기</button>
+     </div>
+<br><br>
+   <div>
+   <h5>"WINGARDIUM LEVIOSA"</h5>
+    <button type="button" style="color:white; border-radius: 5px; background-color: darkslateblue; border: 5px; padding: 5px; margin-right: 5px;"  onClick="record('/record3')" id="record3">RECORD 3</button>
+    <button type="button" style="border-radius: 5px; border: 5px; background-color: white; padding: 5px; margin-left: 5px;" onClick="play('/sound3.wav')" id="play3">PLAY 3</button>
+    <button type="button" style="border-radius: 5px; border: 5px; background-color: darkorange; padding: 5px; margin-left: 5px;" onClick="location.href='http://insung.dothome.co.kr/insung.html'">결과보기</button>
+    </div>
+<br><br><br><br>
+
+</div>
+<iframe id="ifr" style="display:none"></iframe>
+</body>
+</html>
+
+
+<script type="text/javascript">
+if (window.HTMLAudioElement)
+{
+  var player = new Audio('');
+  function play(url)
+  {
+    if (player.paused || url != player.src)
+    {
+      if (player.canPlayType('audio/mp3'))
+      {
+        player.src = url;
+      }
+      player.play();
+    }
+    else
+    {
+      player.pause();
+    }
+  }
+  function record(url)
+  {
+    ifr.src = location.origin + url;
+  }
+}
+</script >

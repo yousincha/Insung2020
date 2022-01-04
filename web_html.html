@@ -1,0 +1,56 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Welcome to Insung</title>
+</head>
+<body>
+<div align="center">
+<h2>WELCOME TO INSUNG</h2>
+<table>
+<tr>
+<td>
+<button onClick="record('/record1')" id="record1">RECORD 1</button>
+</td>
+</tr>
+<tr>
+<td>
+<button onClick="record('/record2')" id="record2">RECORD 2</button>
+</td>
+</tr>
+<tr>
+<td>
+<button onClick="record('/record3')" id="record3">RECORD 3</button>
+</td>
+</tr>
+</table>
+<iframe id="ifr" style="display:none"></iframe>
+</div>
+</body>
+</html>
+<script type="text/javascript">
+if (window.HTMLAudioElement)
+{
+  var player = new Audio('');
+  function play(url)
+  {
+    if (player.paused || url != player.src)
+    {
+      if (player.canPlayType('audio/mp3'))
+      {
+        player.src = url;
+      }
+      player.play();
+    }
+    else
+    {
+      player.pause();
+    }
+  }
+  function record(url)
+  {
+    ifr.src = location.origin + url;
+  }
+}
+</script >
